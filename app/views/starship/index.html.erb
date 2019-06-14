@@ -1,0 +1,153 @@
+<h1>STAR WAR STARSHIP</h1>
+
+
+<table>
+    <thead>
+       <tr>
+       	<th>Name: </th>
+       	<th><%= @informacion["name"] %></th>
+ 		
+
+       </tr>
+    </thead>
+</table>
+
+<table>
+    <thead>
+       <tr>
+       	<th>Model: </th>
+       	<th><%= @informacion["model"] %></th>
+       </tr>
+    </thead>
+</table>
+<table>
+    <thead>
+       <tr>
+        <th>starshipClass: </th>
+        <th><%= @informacion["starshipClass"] %></th>
+       </tr>
+    </thead>
+</table>
+<table>
+    <thead>
+       <tr>
+       	<th>Manufacturer: </th>
+       	<th><%= @informacion["manufacturers"] %></th>
+       </tr>
+    </thead>
+</table>
+
+<table>
+    <thead>
+       <tr>
+       	<th>Cost in credits: </th>
+       	<th><%= @informacion["costInCredits"] %></th>
+       </tr>
+    </thead>
+</table>
+
+
+<table>
+    <thead>
+       <tr>
+       	<th>Length: </th>
+       	<th><%= @informacion["length"] %></th>
+       </tr>
+    </thead>
+</table>
+
+<table>
+    <thead>
+       <tr>
+        <th>Crew: </th>
+        <th><%= @informacion["crew"] %></th>
+       </tr>
+    </thead>
+</table>
+
+<table>
+    <thead>
+       <tr>
+        <th>passengers: </th>
+        <th><%= @informacion["passengers"] %></th>
+       </tr>
+    </thead>
+</table>
+
+<table>
+    <thead>
+       <tr>
+       	<th>max_atmosphering_speed: </th>
+       	<th><%= @informacion["maxAtmospheringSpeed"] %></th>
+       </tr>
+    </thead>
+</table>
+
+<table>
+    <thead>
+       <tr>
+        <th>Hyperdrive rating: </th>
+        <th><%= @informacion["hyperdriveRating"] %></th>
+       </tr>
+    </thead>
+</table>
+
+<table>
+    <thead>
+       <tr>
+        <th>Mglt: </th>
+        <th><%= @informacion["MGLT"] %></th>
+       </tr>
+    </thead>
+</table>
+
+<table>
+    <thead>
+       <tr>
+       	<th>Cargo capacity: </th>
+       	<th><%= @informacion["cargoCapacity"] %></th>
+       </tr>
+    </thead>
+</table>
+
+<table>
+    <thead>
+       <tr>
+       	<th>Consumables: </th>
+       	<th><%= @informacion["consumables"] %></th>
+       </tr>
+    </thead>
+</table>
+
+
+<table>
+    <thead>
+       <tr>
+        <th>Films: </th>
+       </tr>
+    </thead>
+    <tbody>
+    <%  @informacion["filmConnection"]["films"].each do |film| %>
+        <td> </td>
+        <td><%= link_to film["title"], pelicula_path(:informacion=> film ), class: "btn btn-primary" %></td>
+       </tr>
+         <% end %>
+    </tbody>
+</table>
+
+
+<table>
+    <thead>
+       <tr>
+        <th>Pilots: </th>
+       </tr>
+    </thead>
+    <tbody>
+    <%  @informacion["pilotConnection"]["pilots"].each do |pilot| %>
+        <td> </td>
+        <td><%= link_to pilot["name"], character_path(:content=> pilot["id"] ), class: "btn btn-primary" %></td>
+       </tr>
+         <% end %>
+    </tbody>
+</table>
+

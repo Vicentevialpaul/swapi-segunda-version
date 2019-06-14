@@ -1,0 +1,36 @@
+  <table>
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th> </th>
+        <th> Año Lanzamiento </th>
+        <th> </th>
+        <th> Director </th>
+        <th> </th>
+        <th> Productor(es)</th>
+        <th> </th>
+        <th> Número de episodio </th>
+
+        <th colspan="10"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+    <%   @response["data"]["allFilms"]["edges"].each do |persona| %>
+        <td><%= link_to persona["node"]["title"], pelicula_path(:informacion=> persona["node"] ), class: "btn btn-primary" %></td>
+        <td> | </td>
+        <td><%= persona["node"]["releaseDate"] %></td>
+        <td> | </td>
+        <td><%= persona["node"]["director"] %></td>
+        <td> | </td>
+        <td><%= persona["node"]["producers"] %></td>
+        <td> | </td>
+        <td><%= persona["node"]["episodeID"] %></td>
+       </tr>
+         <% end %>
+    </tbody>
+  </table>
+
+
+
+

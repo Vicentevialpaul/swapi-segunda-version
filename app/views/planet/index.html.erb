@@ -1,0 +1,119 @@
+<h1>STAR WARS PLANET</h1>
+
+<table>
+    <thead>
+       <tr>
+       	<th>Name: </th>
+ 		   <th><%= @informacion["name"] %></th>
+
+       </tr>
+    </thead>
+</table>
+
+
+
+
+
+<table>
+    <thead>
+       <tr>
+       	<th>Diameter: </th>
+       	<th><%= @informacion["diameter"] %></th>
+       </tr>
+    </thead>
+</table>
+
+<table>
+    <thead>
+       <tr>
+       	<th>Rotation period: </th>
+       	<th><%= @informacion["rotationPeriod"] %></th>
+       </tr>
+    </thead>
+</table>
+
+<table>
+    <thead>
+       <tr>
+       	<th>Orbital period: </th>
+       	<th><%= @informacion["orbitalPeriod"] %></th>
+       </tr>
+    </thead>
+</table>
+
+<table>
+    <thead>
+       <tr>
+       	<th>Gravity: </th>
+       	<th><%= @informacion["gravity"] %></th>
+       </tr>
+    </thead>
+</table>
+
+<table>
+    <thead>
+       <tr>
+       	<th>Climates: </th>
+       	<th><%= @informacion["climates"] %></th>
+       </tr>
+    </thead>
+</table>
+
+<table>
+    <thead>
+       <tr>
+       	<th>Population: </th>
+       	<th><%= @informacion["population"] %></th>
+       </tr>
+    </thead>
+</table>
+
+<table>
+    <thead>
+       <tr>
+       	<th>Terrains: </th>
+       	<th><%= @informacion["terrains"] %></th>
+       </tr>
+    </thead>
+</table>
+
+<table>
+    <thead>
+       <tr>
+       	<th>Surface Water: </th>
+       	<th><%= @informacion["surfaceWater"] %></th>
+       </tr>
+    </thead>
+</table>
+
+
+<table>
+    <thead>
+       <tr>
+       	<th>Films: </th>
+       </tr>
+    </thead>
+    <tbody>
+		<%  @informacion["filmConnection"]["films"].each do |film| %>
+       	<td> </td>
+       	<td><%= link_to film["title"], pelicula_path(:informacion=> film), class: "btn btn-primary" %></td>
+    	 </tr>
+         <% end %>
+    </tbody>
+</table>
+
+
+<table>
+    <thead>
+       <tr>
+       	<th>Residents: </th>
+       </tr>
+    </thead>
+    <tbody>
+		<%  @informacion["residentConnection"]["residents"].each do |residente| %>
+       	<td> </td>
+       	<td><%= link_to residente["name"], character_path(:content=> residente["id"] ), class: "btn btn-primary" %></td>
+    	 </tr>
+         <% end %>
+    </tbody>
+</table>

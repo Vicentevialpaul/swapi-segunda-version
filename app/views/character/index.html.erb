@@ -1,0 +1,132 @@
+<h1>STAR WAR CHARACTER</h1>
+
+<table>
+    <thead>
+       <tr>
+        <th>Name: </th>
+        <th><%= @informacion["name"] %></th>
+       </tr>
+    </thead>
+</table>
+
+<table>
+    <thead>
+       <tr>
+       	<th>Birth year: </th>
+       	<th><%= @informacion["birthYear"] %></th>
+ 		
+
+       </tr>
+    </thead>
+</table>
+
+
+<table>
+    <thead>
+       <tr>
+       	<th>Eye color: </th>
+       	<th><%= @informacion["eyeColor"] %></th>
+       </tr>
+    </thead>
+</table>
+
+<table>
+    <thead>
+       <tr>
+       	<th>Gender: </th>
+       	<th><%= @informacion["gender"] %></th>
+       </tr>
+    </thead>
+</table>
+
+<table>
+    <thead>
+       <tr>
+       	<th>Hair color: </th>
+       	<th><%= @informacion["hairColor"] %></th>
+       </tr>
+    </thead>
+</table>
+
+<table>
+    <thead>
+       <tr>
+       	<th>Height: </th>
+       	<th><%= @informacion["height"] %></th>
+       </tr>
+    </thead>
+</table>
+
+<table>
+    <thead>
+       <tr>
+       	<th>Mass: </th>
+       	<th><%= @informacion["mass"] %></th>
+       </tr>
+    </thead>
+</table>
+
+<table>
+    <thead>
+       <tr>
+       	<th>Name: </th>
+       	<th><%= @informacion["name"] %></th>
+       </tr>
+    </thead>
+</table>
+
+<table>
+    <thead>
+       <tr>
+       	<th>Skin color: </th>
+       	<th><%= @informacion["skinColor"] %></th>
+       </tr>
+    </thead>
+</table>
+
+
+<table>
+    <thead>
+       <tr>
+        <th>Homeworld: </th>
+        <th><%= link_to @informacion["homeworld"]["name"], planet_path(:content=> @informacion["homeworld"]["id"] ) %></th>
+       </tr>
+    </thead>
+</table>
+
+
+
+<table>
+    <thead>
+       <tr>
+       	<th>Films: </th>
+       </tr>
+    </thead>
+    <tbody>
+		<%  @informacion["filmConnection"]["films"].each do |film| %>
+       	<td> </td>
+       	<td><%= link_to film["title"], pelicula_path(:informacion=> film ), class: "btn btn-primary" %></td>
+    	 </tr>
+         <% end %>
+    </tbody>
+</table>
+
+
+<table>
+    <thead>
+       <tr>
+       	<th>Starships: </th>
+       </tr>
+    </thead>
+    <tbody>
+		<%  @informacion["starshipConnection"]["starships"].each do |film| %>
+       	<td> </td>
+       	<td><%= link_to film["name"], starship_path(:content=> film["id"]), class: "btn btn-primary" %></td>
+    	 </tr>
+         <% end %>
+    </tbody>
+</table>
+
+
+
+

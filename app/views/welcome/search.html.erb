@@ -1,0 +1,27 @@
+<h1> Búsqueda </h1>
+
+
+<%  @personas.each do |persona| %>
+<%  if persona["name"].include? @parametros %>
+       	<td><%= link_to persona["name"], character_path(:content=> persona ), class: "btn btn-primary" %></td>
+		<% end %>
+<% end %>
+
+<%  @starships.each do |starship| %>
+<%  if starship["name"].include? @parametros %>
+       	<td><%= link_to starship["name"], starship_path(:content=> starship ), class: "btn btn-primary" %></td>
+		<% end %>
+<% end %>
+
+<%  @films.each do |film| %>
+<%  if film["title"].include? @parametros %>
+       	<td><%= link_to film["title"], pelicula_path(:informacion=> film ), class: "btn btn-primary" %></td>
+		<% end %>
+<% end %>
+
+<%  @planets.each do |planet| %>
+<%  if planet["name"].include? @parametros %>
+       	<td><%= link_to planet["name"], planet_path(:content=> planet, :hola=>"hola"), class: "btn btn-primary" %></td>
+		<% end %>
+<% end %>
+
