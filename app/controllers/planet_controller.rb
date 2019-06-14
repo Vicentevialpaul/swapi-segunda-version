@@ -6,7 +6,7 @@ class PlanetController < ApplicationController
                headers: {'content-type': 'application/json'},
                body:{"query": "query{planet(id: \"#{idp}\"){name,diameter,rotationPeriod, orbitalPeriod, gravity, population, climates
                ,terrains,surfaceWater,
-               filmConnection{films{title,episodeID}},
+               filmConnection{films{title,episodeID,id}},
                residentConnection{residents{name,id}},
                        }}"}.to_json)
     @response = JSON.parse(response1.body)

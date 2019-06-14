@@ -7,7 +7,7 @@ class StarshipController < ApplicationController
                headers: {'content-type': 'application/json'},
                body:{"query": "query{starship(id: \"#{idp}\"){name,model,starshipClass,manufacturers,costInCredits
                ,length,crew,passengers,maxAtmospheringSpeed, hyperdriveRating,MGLT, cargoCapacity, consumables,
-                       filmConnection{films{title,episodeID}},
+                       filmConnection{films{title,episodeID,id}},
                        pilotConnection{pilots{name,id}},
                        }}"}.to_json)
     @response = JSON.parse(response1.body)
