@@ -8,7 +8,7 @@ class WelcomeController < ApplicationController
                body:{"query": "query{allFilms
 						               	{edges
 						               		{node
-						               			{title,releaseDate,episodeID,director,producers}}}}"}.to_json)
+						               			{title,releaseDate,episodeID,director,producers,id}}}}"}.to_json)
 	@response = JSON.parse(response1.body)
 
   end
