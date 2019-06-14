@@ -6,10 +6,10 @@ class PeliculaController < ApplicationController
   def index
     self.params = params.permit!
     @urls =  params[:informacion]
-    id = @urls["episodeID"].to_i
+    idp = @urls["id"]
     response1 =  HTTParty.post("https://swapi-graphql-integracion-t3.herokuapp.com/",
                headers: {'content-type': 'application/json'},
-               body:{"query": "query{film(filmID: #{id}){title,releaseDate,episodeID,openingCrawl,director,producers,
+               body:{"query": "query{film(id: \"#{idp}\"){title,releaseDate,episodeID,openingCrawl,director,producers,
                        characterConnection{characters{name,id}},
                        planetConnection{planets{name,id}},
                        starshipConnection{starships{name,id}},
